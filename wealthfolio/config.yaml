@@ -1,0 +1,27 @@
+name: Wealthfolio
+slug: wealthfolio
+version: "0.1.0"
+description: "Home Assistant add-on per eseguire Wealthfolio tramite Docker"
+arch:
+  - amd64
+  - arm64
+
+startup: services
+boot: auto
+
+ingress: true
+ingress_port: 8088
+webui: "http://[HOST]:[PORT:8088]"
+
+# Percorso su HA dove salvare i dati
+volumes:
+  - /config/wealthfolio:/data
+
+environment:
+  WF_DB_PATH: "/data/wealthfolio.db"
+  WF_SECRET_KEY: "CHANGE_ME"  # ti servirà generare un segreto
+
+options: {}
+schema: {}
+
+image: afadil/wealthfolio:latest
