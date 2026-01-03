@@ -4,7 +4,6 @@ version: "0.1.0"
 description: Home Assistant add-on per Wealthfolio
 url: "https://github.com/robertodigisi/ha-addon-wealthfolio/tree/main/wealthfolio"
 arch:
-  - aarch64
   - amd64
 init: false
 map:
@@ -14,6 +13,6 @@ volumes:
 environment:
   WF_DB_PATH: "/data/wealthfolio.db"
   WF_SECRET_KEY: "CHANGE_ME"
-image: "afadil/wealthfolio:latest"
+image: afadil/wealthfolio"
 options: {}
 schema: {}
